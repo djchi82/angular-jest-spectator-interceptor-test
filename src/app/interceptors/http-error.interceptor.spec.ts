@@ -31,7 +31,7 @@ describe('HttpErrorInterceptor', () => {
 
   test('Http success', async(() => {
     const mockHandler = {
-      handle: jest.fn(() => of(new HttpResponse({status: 500})))
+      handle: jest.fn(() => of(new HttpResponse({status: 200})))
     };
     spectator.service.intercept(new HttpRequest<unknown>(HttpMethod.GET, '/thing'), mockHandler)
       .subscribe((response) => {
